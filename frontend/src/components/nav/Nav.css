@@ -1,0 +1,18 @@
+@media (min-width: 576px){
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+*{
+    background: #6091A9;
+}
+
+.navbar a{
+    font-family: "JejuMyeongjo";
+    color: white !important;
+}
+.navbar-nav a:hover{
+    background: #003F69;
+}
