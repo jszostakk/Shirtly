@@ -1,3 +1,4 @@
 const mongoose = require('mongoose');
+const {database} = require('../config')
 
-mongoose.connect('mongodb://127.0.0.1:27017/my_database');
+mongoose.connect(database);
