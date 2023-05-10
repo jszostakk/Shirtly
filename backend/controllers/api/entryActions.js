@@ -1,42 +1,79 @@
 const Entry = require('../../db/models/Entry');
 
 class EntryActions {
-    saveEntry(req, res) {
-        // const newEntry = new Entry({
-        //     title: 't1',
-        //     description: 'd1',
-        //     image: 'i1',
-        //     likes: 0,
-        //     dislikes: 0
-        // });
-        //
-        // newEntry.save().then(() => {
-        //     console.log('Notka zapisana')
-        // });
+    async saveEntry(req, res) {
         const title = req.body.title;
         const description = req.body.description;
         const image = req.body.image;
-        const likes = 0;
-        const dislikes = 0;
 
-        res.send(''+title+description);
+        let newEntry;
+
+        try{
+            newEntry = new Entry({
+                title,
+                description,
+                image,
+                likes: 0,
+                dislikes: 0
+            });
+
+            await newEntry.save().then(() => {
+                console.log('Wpis zapisany')
+            });
+        }catch (err){
+            return res.status(422).json({message: err.message});
+        }
+
+        res.status(201).json(newEntry);
     }
 
-    getEntry(req, res) {
-        res.send('');
+    async getEntry(req, res) {
+        const id = req.params.id;
+        const entry = await Entry.findOne({_id: id});
+        res.status(200).json(entry);
     }
 
     getEntries(req, res) {
-        res.send('dziala');
+        Entry.find()
+            .then(entries => {
+                console.log(entries);
+                res.status(200).json(entries);
+            })
+            .catch(error => {
+                res.status(500).json({message: error.message})
+            });
     }
 
-    updateEntry(req, res) {
-        res.send('');
-    }
-
-    deleteEntry(req, res) {
+    async updateEntry(req, res) {
         const id = req.params.id;
-        res.send('' + id);
+        const title = req.body.title;
+        const description = req.body.description;
+        const image = req.body.image;
+
+        const entry = await Entry.findOne({ _id: id });
+
+        if (!entry) {
+            return res.status(404).json({ error: 'Entry not found' });
+        }
+
+        entry.title = title;
+        entry.description = description;
+        entry.image = image;
+
+        await entry.save().then(() => {
+            console.log('Wpis zaktualizowany')
+        });
+
+        res.status(201).json(entry);
+    }
+
+    async deleteEntry(req, res) {
+        const id = req.params.id;
+
+        await Entry.deleteOne({ _id: id});
+
+        console.log('Wpis usuniety');
+        res.sendStatus(204);
     }
 }
 

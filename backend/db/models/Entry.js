@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
 
-const Entry = mongoose.model('Entry',{
-    title: String,
-    description: String,
+const EntrySchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
     image: String,
     likes: Number,
     dislikes: Number,
@@ -13,5 +19,7 @@ const Entry = mongoose.model('Entry',{
         dislikes: Number
     }]
 })
+
+const Entry = mongoose.model('Entry', EntrySchema)
 
 module.exports = Entry;
