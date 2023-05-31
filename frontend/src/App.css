@@ -33,10 +33,6 @@
     .content {
         width: 60vw;
     }
-
-    .content img{
-        height: 0;
-    }
 }
 
 h1, p{

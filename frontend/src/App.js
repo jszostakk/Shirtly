@@ -12,7 +12,7 @@ function App() {
                 </div>
                 <div className="content">
                     <Navbar/>
-                    <img src="frontend/public/background1.png"/>
+                    <img src="https://i.imgur.com/rBD9thB.png"/>
                     <Entries/>
                 </div>
                 <div className="ads">

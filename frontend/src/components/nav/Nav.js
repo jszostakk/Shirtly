@@ -6,7 +6,7 @@ class Nav extends React.Component{
     render(){
         return <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-                <img src='frontend/src/images/shirt1.jpg'/>
+                <img src="https://i.imgur.com/ySk57z6.png"/>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                         aria-label="Toggle navigation">
