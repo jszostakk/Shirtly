@@ -7,6 +7,8 @@ import Entry from "../entry/Entry";
 import NewEntry from "../newEntry/newEntry";
 import Modal from 'react-modal';
 import EditEntry from "../EditEntry/EditEntry";
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 class Entries extends React.Component{
     constructor(props) {
@@ -39,11 +41,15 @@ class Entries extends React.Component{
      async addEntry(entry){
         const entries = [...this.state.entries];
 
-        const res = await axios.post('/entries', entry);
-        const newEntry = res.data;
+         try{
+             const res = await axios.post('/entries', entry);
+             const newEntry = res.data;
 
-        entries.push(newEntry);
-        this.setState({entries});
+             entries.push(newEntry);
+             this.setState({entries});
+         } catch(err){
+             NotificationManager.error(err.response.data.message);
+         }
     }
 
     async editEntry(entry){
@@ -71,6 +77,7 @@ class Entries extends React.Component{
     render(){
         return (
             <div className="cont">
+                <NotificationContainer/>
                 <NewEntry
                     onAdd={(entry) => this.addEntry(entry)}
                 />
