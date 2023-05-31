@@ -1,0 +1,19 @@
+.title{
+    height: 10vh;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, p{
+    background: white;
+    font-family: "JejuMyeongjo";
+}
+
+@media (min-width: 576px){
+    .title{
+        height: 30vh;
+    }
+}

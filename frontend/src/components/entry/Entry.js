@@ -1,15 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Entry.css';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.css';
 
-class Entry extends React.Component{
-    render(){
-        return <button className="article">
-            <img src="frontend/src/images/shirt1.jpg"/>
-            <h1>Header</h1>
-            <p>Opis</p>
-        </button>
+function Entry(props) {
+
+    const [showDesc, setShowDesc] = useState(false);
+
+    const toggleDesc = () => {
+        setShowDesc(!showDesc);
     }
+    const editHandler = () => {
+        props.onEdit({
+            title: props.title,
+            description:props.description,
+            _id:props.id});
+    }
+
+    return (
+        <a className="article">
+            <div className="titleDescription">
+                <h1 onClick={toggleDesc}>{props.title}</h1>
+                {showDesc && (<p>
+                    {props.description}
+                </p>)}
+
+            </div>
+            <button className="delete" onClick={() => props.onDelete(props.id)}>
+                usun
+            </button>
+            <button className="edit" onClick={editHandler}>
+                edytuj
+            </button>
+        </a>
+    )
 }
 
 export default Entry;

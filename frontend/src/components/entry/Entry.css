@@ -24,3 +24,11 @@ img{
     grid-row-end: 2;
     background: #B4CCD6;
 }
+
+.cont{
+    background: transparent;
+}
+
+.titleDescription{
+    background: transparent;
+}

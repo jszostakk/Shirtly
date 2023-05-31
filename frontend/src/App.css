@@ -21,6 +21,10 @@
     background: white;
 }
 
+.content img{
+    all: revert;
+}
+
 @media (min-width: 576px) {
     .ads {
         width: 20vw;
@@ -29,9 +33,13 @@
     .content {
         width: 60vw;
     }
+
+    .content img{
+        height: 0;
+    }
 }
+
 h1, p{
     grid-column: 2;
     background: #B4CCD6;
 }
-

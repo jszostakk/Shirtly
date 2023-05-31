@@ -6,7 +6,7 @@ class Nav extends React.Component{
     render(){
         return <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-                <img src="frontend/src/images/shirt1.jpg" alt = "Koszula"/>
+                <img src='frontend/src/images/shirt1.jpg'/>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -15,7 +15,7 @@ class Nav extends React.Component{
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <a className="nav-link active" aria-current="page" href="#">Strona Głowna</a>
-                        <a className="nav-link active" aria-current="page" href="#">O koszulach</a>
+                        <a className="nav-link active" aria-current="page" href="">Dodaj wpis</a>
                         <a className="nav-link active" aria-current="page" href="#">Kołnierze</a>
                         <a className="nav-link active" aria-current="page" href="#">Mankiety</a>
                         <a className="nav-link active" aria-current="page" href="#">Dodatki</a>

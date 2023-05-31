@@ -2,6 +2,11 @@
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.3.0-alpha3",
-    "react-popper": "^2.3.0"
+    "react-popper": "^2.3.0",
+    "react-router-dom": "^6.11.2"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1"
   }
 }

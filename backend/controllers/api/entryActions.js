@@ -4,7 +4,6 @@ class EntryActions {
     async saveEntry(req, res) {
         const title = req.body.title;
         const description = req.body.description;
-        const image = req.body.image;
 
         let newEntry;
 
@@ -12,7 +11,6 @@ class EntryActions {
             newEntry = new Entry({
                 title,
                 description,
-                image,
                 likes: 0,
                 dislikes: 0
             });
@@ -33,36 +31,37 @@ class EntryActions {
         res.status(200).json(entry);
     }
 
-    getEntries(req, res) {
-        Entry.find()
+    async getEntries(req, res) {
+        const doc = await Entry.find({});
+
+        res.status(200).json(doc);
+
+
+        /*Entry.find()
             .then(entries => {
                 console.log(entries);
                 res.status(200).json(entries);
             })
             .catch(error => {
                 res.status(500).json({message: error.message})
-            });
+            });*/
     }
 
     async updateEntry(req, res) {
         const id = req.params.id;
         const title = req.body.title;
         const description = req.body.description;
-        const image = req.body.image;
 
         const entry = await Entry.findOne({ _id: id });
 
-        if (!entry) {
+        /*if (!entry) {
             return res.status(404).json({ error: 'Entry not found' });
-        }
+        }*/
 
         entry.title = title;
         entry.description = description;
-        entry.image = image;
 
-        await entry.save().then(() => {
-            console.log('Wpis zaktualizowany')
-        });
+        await entry.save();
 
         res.status(201).json(entry);
     }
