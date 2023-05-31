@@ -32,3 +32,30 @@ img{
 .titleDescription{
     background: transparent;
 }
+
+
+.article {
+    display: grid;
+    grid-template-areas:
+        "head aside"
+        "para aside";
+    padding: 1em;
+    margin-top: 2em;
+    width: 100%;
+    justify-content: space-between;
+    text-decoration: none; /* Remove underline from h1 */
+}
+
+.titleDescription h1 {
+    color: white; /* Set the color of h1 to white */
+    text-decoration: none; /* Remove underline from h1 */
+}
+
+.titleDescription p {
+    color: white; /* Set the color of p to white */
+    text-decoration: none; /* Remove underline from p */
+}
+
+.buttonGroup{
+    background: transparent;
+}
