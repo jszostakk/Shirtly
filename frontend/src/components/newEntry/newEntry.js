@@ -25,6 +25,7 @@ function NewEntry(props){
         setTitle('');
         setDescription('');
         setShowForm(false)
+
     }
 
     return(

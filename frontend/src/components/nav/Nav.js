@@ -15,7 +15,6 @@ class Nav extends React.Component{
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <a className="nav-link active" aria-current="page" href="#">Strona Głowna</a>
-                        <a className="nav-link active" aria-current="page" href="">Dodaj wpis</a>
                         <a className="nav-link active" aria-current="page" href="#">Kołnierze</a>
                         <a className="nav-link active" aria-current="page" href="#">Mankiety</a>
                         <a className="nav-link active" aria-current="page" href="#">Dodatki</a>

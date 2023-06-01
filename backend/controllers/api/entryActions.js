@@ -32,19 +32,9 @@ class EntryActions {
     }
 
     async getEntries(req, res) {
-        const doc = await Entry.find({});
+        const doc = await Entry.find({}).sort({ _id: -1 });
 
         res.status(200).json(doc);
-
-
-        /*Entry.find()
-            .then(entries => {
-                console.log(entries);
-                res.status(200).json(entries);
-            })
-            .catch(error => {
-                res.status(500).json({message: error.message})
-            });*/
     }
 
     async updateEntry(req, res) {
