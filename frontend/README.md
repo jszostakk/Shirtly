@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Technology decisions
+
+**_React_** vs Angular
+
+* Reussable and more predictable code
+* Faster development time
+* Integration with third-party libraries
+
+**_NodeJS_** vs Spring Boot
+* Lightweight and fast
+* Single-threaded (low memory utilization)
+
+**_MongoDB_** vs Postgresql
+* Data can be reshaped as we need to
+* Project does not need complex queries
+* Document model, that makes collaboration and development easier and faster to implement
+
+![img.png](img.png)
+
+
+![img_1.png](img_1.png)
+
+
+![img_2.png](img_2.png)
