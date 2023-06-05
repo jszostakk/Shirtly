@@ -3,10 +3,10 @@ const Entry = require('../../db/models/Entry');
 class EntryActions {
     async login(req, res){
         if (req.isAuthenticated()){
-            res.redirect("www.onet.pl");
+            res.redirect("/api/entries/647e1803432cdda09313b033");
         }
         else {
-            res.redirect("www.interia.pl");
+            res.redirect("/api/entries/647e180d432cdda09313b035");
         }
     }
     async saveEntry(req, res) {

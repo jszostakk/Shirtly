@@ -3,9 +3,9 @@ const app = express();
 const { port } = require('./config');
 const apiRouter = require('./routes/api');
 var loginRouter = require("./routerLogin");
+const cors = require('cors');
 
 const bodyParser = require('body-parser');
-const cors = require('cors');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -13,7 +13,7 @@ const initializePassport = require('./passport-config');
 const flash = require('express-flash')
 const { User } = require("./db/models/User");
 
-
+app.use(cors());
 
 require('./db/mongoose');
 const Entry = require("./db/models/Entry");

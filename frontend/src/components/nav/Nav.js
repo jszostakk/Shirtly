@@ -18,7 +18,7 @@ class Nav extends React.Component{
                         <a className="nav-link active" aria-current="page" href="#">Kołnierze</a>
                         <a className="nav-link active" aria-current="page" href="#">Mankiety</a>
                         <a className="nav-link active" aria-current="page" href="#">Dodatki</a>
-                        <form action="/login" method="POST" className="login">
+                        <form action="/api/login" method="POST" className="login">
                         <div>
                                 <label htmlFor='email'>Email</label>
                                 <input type="text" id="email" name="email"/>
