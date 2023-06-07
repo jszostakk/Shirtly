@@ -9,6 +9,7 @@ class EntryActions {
             res.redirect("/api/entries/647e180d432cdda09313b035");
         }
     }
+
     async saveEntry(req, res) {
         const title = req.body.title;
         const description = req.body.description;
