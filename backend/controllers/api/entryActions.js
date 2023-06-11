@@ -1,6 +1,15 @@
 const Entry = require('../../db/models/Entry');
 
 class EntryActions {
+    async login(req, res){
+        if (req.isAuthenticated()){
+            res.redirect("/api/entries/647e1803432cdda09313b033");
+        }
+        else {
+            res.redirect("/api/entries/647e180d432cdda09313b035");
+        }
+    }
+
     async saveEntry(req, res) {
         const title = req.body.title;
         const description = req.body.description;
@@ -43,10 +52,6 @@ class EntryActions {
         const description = req.body.description;
 
         const entry = await Entry.findOne({ _id: id });
-
-        /*if (!entry) {
-            return res.status(404).json({ error: 'Entry not found' });
-        }*/
 
         entry.title = title;
         entry.description = description;
